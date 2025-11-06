@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="pages.home.title">HTML门户模板 - 首页</title>
+    <link rel="stylesheet" href="/styles/main.css">
+</head>
+<body>
+    <div id="navbar-container"></div>
+    
+    <section class="hero">
+        <h1 data-i18n="pages.home.hero.title">欢迎来到HTML门户模板</h1>
+        <p data-i18n="pages.home.hero.subtitle">一个简易开发的门户网站</p>
+        <a href="/pages/about.html" class="cta-button" data-i18n="common.learnMore">了解更多</a>
+    </section>
+
+
+    <main class="container">
+        <div id="page-content"></div>
+    </main>
+
+    <div id="footer-container"></div>
+
+    <script src="/js/i18n.js"></script>
+    <script src="/js/component-loader.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', async function() {
+            // 加载布局组件
+            await componentLoader.loadAllGlobalComponents();
+            
+            // 加载首页内容
+            await componentLoader.renderContent('home-content', 'page-content');
+            
+            // 初始化语言系统
+            await initI18n();
+        });
+    </script>
+</body>
+</html>

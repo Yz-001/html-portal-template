@@ -1,0 +1,240 @@
+{
+  "brand": "My Portal",
+  "nav": {
+    "home": "Home",
+    "about": "About Us",
+    "contact": "Contact Us",
+    "services": {
+      "main": "Services",
+      "websiteDev": "Website Development",
+      "appDev": "App Development",
+      "uiDesign": "UI Design",
+      "consulting": "Technical Consulting"
+    }
+  },
+  "pages": {
+    "home": {
+      "title": "My Portal - Home"
+    },
+    "about": {
+      "title": "About Us - My Portal"
+    },
+    "services": {
+      "main": {
+        "title": "Services - My Portal",
+        "heroTitle": "Our Professional Services",
+        "heroSubtitle": "Comprehensive Technical Solutions"
+      },
+      "websiteDev": {
+        "title": "Website Development - My Portal",
+        "heroTitle": "Professional Website Development",
+        "heroSubtitle": "Customized Website Solutions"
+      },
+      "appDev": {
+        "title": "App Development - My Portal",
+        "heroTitle": "Mobile App Development",
+        "heroSubtitle": "iOS & Android App Development"
+      },
+      "uiDesign": {
+        "title": "UI Design - My Portal",
+        "heroTitle": "User Interface Design",
+        "heroSubtitle": "Creating Excellent User Experiences"
+      },
+      "consulting": {
+        "title": "Technical Consulting - My Portal",
+        "heroTitle": "Technical Consulting Services",
+        "heroSubtitle": "Professional Technical Guidance and Advice"
+      }
+    }
+  },
+  "common": {
+    "learnMore": "Learn More",
+    "backToHome": "Back to Home",
+    "backToServices": "Back to Services",
+    "copyright": "© 2024 My Portal. All rights reserved.",
+    "readMore": "Read More",
+    "getStarted": "Get Started",
+    "contactUs": "Contact Us",
+    "viewDetails": "View Details"
+  },
+  "footer": {
+    "about": {
+      "title": "About Us",
+      "description": "We are committed to providing customers with the highest quality technical solutions, helping businesses succeed in the digital age through innovation and professional services."
+    },
+    "links": {
+      "title": "Quick Links"
+    },
+    "contact": {
+      "title": "Contact Us",
+      "address": "No. 123, Technology Park, Chaoyang District, Beijing",
+      "phone": "+86 10 1234 5678",
+      "email": "contact@myportal.com"
+    },
+    "social": {
+      "title": "Follow Us",
+      "wechat": "WeChat",
+      "weibo": "Weibo",
+      "linkedin": "LinkedIn"
+    },
+    "copyright": "© 2024 My Portal. All rights reserved.",
+    "legal": {
+      "privacy": "Privacy Policy",
+      "terms": "Terms of Service"
+    }
+  },
+  "lang": {
+    "zh-CN": "Chinese",
+    "en-US": "English"
+  },
+  "pages": {
+    "home": {
+      "hero": {
+        "title": "Welcome to My Portal",
+        "subtitle": "A Modern Multi-language Portal Website"
+      },
+      "features": {
+        "title": "Our Features",
+        "fast": {
+          "title": "Fast Development",
+          "desc": "Build high-quality websites quickly with modern tech stack"
+        },
+        "multilingual": {
+          "title": "Multilingual Support",
+          "desc": "Support Chinese and English switching, international experience"
+        },
+        "responsive": {
+          "title": "Responsive Design",
+          "desc": "Perfect adaptation to various device screen sizes"
+        }
+      },
+      "quickLinks": "Quick Navigation",
+      "aboutDesc": "Learn about our team and mission",
+      "servicesDesc": "Explore our professional services",
+      "contactDesc": "Get contact information and cooperation opportunities"
+    },
+    "about": {
+      "title": "About Us - My Portal",
+      "subtitle": "Learn our story and mission",
+      "mission": {
+        "title": "Our Mission",
+        "content": "We are committed to providing customers with the highest quality technical solutions, helping businesses succeed in the digital age through innovation and professional services."
+      },
+      "vision": {
+        "title": "Our Vision",
+        "content": "Become a leading technical service provider in the industry, creating greater value for customers through continuous innovation and technological breakthroughs."
+      },
+      "values": {
+        "title": "Core Values",
+        "innovation": {
+          "title": "Innovation",
+          "desc": "Continuously explore new technologies and pursue excellence"
+        },
+        "quality": {
+          "title": "Quality",
+          "desc": "Adhere to high standards and ensure delivery quality"
+        },
+        "cooperation": {
+          "title": "Cooperation",
+          "desc": "Establish long-term partnerships with customers"
+        }
+      }
+    },
+    "services": {
+      "main": {
+        "websiteDesc": "Corporate websites, e-commerce platforms, custom web application development",
+        "appDesc": "iOS, Android native apps, cross-platform mobile solutions",
+        "uiDesc": "User interface design, user experience optimization, brand visual design",
+        "consultingDesc": "Technical architecture consulting, project planning, technical team training",
+        "whyTitle": "Why Choose Us",
+        "feature1Title": "Professional Team",
+        "feature1Desc": "Technical experts with years of industry experience",
+        "feature2Title": "Quality Assurance",
+        "feature2Desc": "Strict code review and testing processes",
+        "feature3Title": "Timely Delivery",
+        "feature3Desc": "Complete projects on schedule, ensure timely launch"
+      },
+      "websiteDev": {
+        "introTitle": "Comprehensive Website Development Services",
+        "introDesc": "We provide end-to-end website development services from requirements analysis, design, development to deployment and maintenance, ensuring your website achieves optimal performance in functionality, performance, and user experience.",
+        "featuresTitle": "Our Services Include",
+        "feature1Title": "Corporate Websites",
+        "feature1Desc": "Brand display, product introduction, news updates, contact modules",
+        "feature2Title": "E-commerce Platforms",
+        "feature2Desc": "Product management, shopping cart, payment integration, order processing system",
+        "feature3Title": "Responsive Design",
+        "feature3Desc": "Adapt to various devices, perfect display on mobile, tablet, and computer",
+        "feature4Title": "Backend Management System",
+        "feature4Desc": "Content management, data statistics, user management and other backend functions",
+        "techTitle": "Technology Stack",
+        "tech1": "Vue.js / React",
+        "tech2": "Node.js / Python",
+        "tech3": "MySQL / MongoDB",
+        "tech4": "AWS / Alibaba Cloud",
+        "processTitle": "Development Process",
+        "step1": "Requirements Analysis",
+        "step1Desc": "In-depth understanding of business needs, develop project plan",
+        "step2": "UI/UX Design",
+        "step2Desc": "Design user interface and user experience flow",
+        "step3": "Development Implementation",
+        "step3Desc": "Frontend and backend parallel development, regular demonstrations",
+        "step4": "Testing & Deployment",
+        "step4Desc": "Comprehensive testing, deployment launch, ongoing maintenance",
+        "consultBtn": "Free Consultation"
+      },
+      "appDev": {
+        "introTitle": "Professional Mobile Application Solutions",
+        "introDesc": "We specialize in iOS and Android platform app development, providing end-to-end services from concept design to app store publishing, ensuring applications meet the highest standards in performance, security, and user experience.",
+        "platformsTitle": "Development Platforms",
+        "iosTitle": "iOS Development",
+        "iosDesc": "Using Swift and UIKit to create smooth native iOS applications",
+        "iosFeature1": "iPhone & iPad Adaptation",
+        "iosFeature2": "App Store Publishing",
+        "iosFeature3": "Latest iOS Features Support",
+        "androidTitle": "Android Development",
+        "androidDesc": "Based on Kotlin and Jetpack Compose, develop high-performance Android applications",
+        "androidFeature1": "Multi-device Compatibility",
+        "androidFeature2": "Google Play Publishing",
+        "androidFeature3": "Material Design",
+        "crossTitle": "Cross-platform Development",
+        "crossDesc": "Using React Native or Flutter, one codebase runs on multiple platforms",
+        "crossFeature1": "High Development Efficiency",
+        "crossFeature2": "Low Maintenance Cost",
+        "crossFeature3": "Consistent Experience",
+        "typesTitle": "Application Types",
+        "type1": "E-commerce Apps",
+        "type1Desc": "Integrated shopping, payment, order management",
+        "type2": "Social Apps",
+        "type2Desc": "Instant messaging, content sharing, community interaction",
+        "type3": "Utility Apps",
+        "type3Desc": "Productivity tools, life assistants, professional tools",
+        "type4": "Enterprise Apps",
+        "type4Desc": "Internal management, business processing, mobile office",
+        "consultBtn": "Start Project"
+      }
+    },
+    "contact": {
+      "info": {
+        "title": "Contact Information",
+        "address": "Address:",
+        "addressDetail": "No. 123, Technology Park, Chaoyang District, Beijing",
+        "phone": "Phone:",
+        "phoneDetail": "+86 10 1234 5678",
+        "email": "Email:",
+        "emailDetail": "contact@myportal.com",
+        "workHours": "Work Hours:",
+        "workHoursDetail": "Monday to Friday 9:00-18:00"
+      },
+      "form": {
+        "title": "Send Message",
+        "name": "Name:",
+        "namePlaceholder": "Please enter your name",
+        "email": "Email:",
+        "emailPlaceholder": "Please enter your email",
+        "message": "Message:",
+        "messagePlaceholder": "Please enter your message",
+        "submit": "Send Message"
+      }
+    }
+  }
+}

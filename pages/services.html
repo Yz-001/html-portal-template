@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="pages.services.title">服务 - HTML门户模板</title>
+    <link rel="stylesheet" href="/styles/main.css">
+</head>
+<body>
+    <div id="navbar-container"></div>
+    
+    <main class="container">
+        <div id="page-content"></div>
+    </main>
+
+    <div id="footer-container"></div>
+
+    <script src="/js/i18n.js"></script>
+    <script src="/js/component-loader.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', async function() {
+            // 加载布局组件
+            await componentLoader.loadAllGlobalComponents();
+
+             await componentLoader.renderContent('services-content', 'page-content')
+          
+            // 初始化语言系统
+            await initI18n();
+        });
+    </script>
+</body>
+</html>

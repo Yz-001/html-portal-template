@@ -1,0 +1,198 @@
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3 data-i18n="footer.about.title">关于我们</h3>
+                <p data-i18n="footer.about.description">我们致力于为客户提供最优质的技术解决方案，通过创新和专业的服务，帮助企业在数字化时代取得成功。</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3 data-i18n="footer.links.title">快速链接</h3>
+                <ul class="footer-links">
+                    <li><a href="../index.html" data-i18n="nav.home">首页</a></li>
+                    <li><a href="about.html" data-i18n="nav.about">关于我们</a></li>
+                    <li><a href="services.html" data-i18n="nav.services.main">服务</a></li>
+                    <li><a href="contact.html" data-i18n="nav.contact">联系我们</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3 data-i18n="footer.contact.title">联系我们</h3>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <span class="contact-icon">📍</span>
+                        <span data-i18n="footer.contact.address">北京市朝阳区科技园区123号</span>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">📞</span>
+                        <span data-i18n="footer.contact.phone">+86 10 1234 5678</span>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">✉️</span>
+                        <span data-i18n="footer.contact.email">contact@myportal.com</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h3 data-i18n="footer.social.title">关注我们</h3>
+                <div class="social-links">
+                    <a href="#" class="social-link" aria-label="微信">
+                        <span>💬</span>
+                        <span data-i18n="footer.social.wechat">微信</span>
+                    </a>
+                    <a href="#" class="social-link" aria-label="微博">
+                        <span>📱</span>
+                        <span data-i18n="footer.social.weibo">微博</span>
+                    </a>
+                    <a href="#" class="social-link" aria-label="LinkedIn">
+                        <span>💼</span>
+                        <span data-i18n="footer.social.linkedin">LinkedIn</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="footer-bottom-content">
+                <p data-i18n="footer.copyright">© 2024 HTML门户模板. 版权所有.</p>
+                <div class="footer-legal">
+                    <a href="#" data-i18n="footer.legal.privacy">隐私政策</a>
+                    <a href="#" data-i18n="footer.legal.terms">服务条款</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<style>
+.footer {
+    background: #2c3e50;
+    color: #ecf0f1;
+    margin-top: 4rem;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    padding: 3rem 0 2rem;
+}
+
+.footer-section h3 {
+    color: #3498db;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.footer-section p {
+    line-height: 1.6;
+    color: #bdc3c7;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-links a {
+    color: #bdc3c7;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: #3498db;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+}
+
+.contact-icon {
+    font-size: 1.1rem;
+}
+
+.social-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #bdc3c7;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.social-link:hover {
+    color: #3498db;
+}
+
+.footer-bottom {
+    border-top: 1px solid #34495e;
+    padding: 1.5rem 0;
+}
+
+.footer-bottom-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.footer-bottom p {
+    color: #95a5a6;
+    margin: 0;
+}
+
+.footer-legal {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.footer-legal a {
+    color: #95a5a6;
+    text-decoration: none;
+    transition: color 0.3s;
+    font-size: 0.9rem;
+}
+
+.footer-legal a:hover {
+    color: #3498db;
+}
+
+@media (max-width: 768px) {
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .footer-bottom-content {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+</style>

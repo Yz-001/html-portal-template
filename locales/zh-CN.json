@@ -1,0 +1,50 @@
+{
+  "brand": "HTML门户模板",
+  "nav": {
+    "home": "首页",
+    "about": "关于我们",
+    "contact": "联系我们",
+    "services": {
+      "main": "服务项目",
+      "websiteDev": "网站开发",
+      "appDev": "应用开发", 
+      "uiDesign": "UI设计",
+      "consulting": "技术咨询"
+    }
+  },
+  "pages": {
+    "home": {
+      "title": "HTML门户模板 - 首页"
+    },
+    "about": {
+      "title": "关于我们 - HTML门户模板"
+    },
+    "services": {
+      "main": {
+        "title": "服务项目 - HTML门户模板",
+        "heroTitle": "我们的专业服务",
+        "heroSubtitle": "提供全方位的技术解决方案"
+      },
+      "websiteDev": {
+        "title": "网站开发 - HTML门户模板",
+        "heroTitle": "专业网站开发",
+        "heroSubtitle": "定制化网站解决方案"
+      },
+      "appDev": {
+        "title": "应用开发 - HTML门户模板", 
+        "heroTitle": "移动应用开发",
+        "heroSubtitle": "iOS & Android 应用开发"
+      },
+      "uiDesign": {
+        "title": "UI设计 - HTML门户模板",
+        "heroTitle": "用户界面设计",
+        "heroSubtitle": "打造优秀的用户体验"
+      },
+      "consulting": {
+        "title": "技术咨询 - HTML门户模板",
+        "heroTitle": "技术咨询服务", 
+        "heroSubtitle": "专业的技术指导和建议"
+      }
+    }
+  }
+}

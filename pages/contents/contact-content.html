@@ -1,0 +1,61 @@
+<div class="page-header">
+    <h1 data-i18n="pages.contact.title">联系我们</h1>
+    <p data-i18n="pages.contact.subtitle">期待与您合作</p>
+</div>
+
+<div class="contact-content">
+    <div class="contact-info">
+        <h2 data-i18n="pages.contact.info.title">联系信息</h2>
+        <div class="contact-item">
+            <strong data-i18n="pages.contact.info.address">地址：</strong>
+            <span data-i18n="pages.contact.info.addressDetail">北京市朝阳区科技园区123号</span>
+        </div>
+        <div class="contact-item">
+            <strong data-i18n="pages.contact.info.phone">电话：</strong>
+            <span data-i18n="pages.contact.info.phoneDetail">+86 10 1234 5678</span>
+        </div>
+        <div class="contact-item">
+            <strong data-i18n="pages.contact.info.email">邮箱：</strong>
+            <span data-i18n="pages.contact.info.emailDetail">contact@myportal.com</span>
+        </div>
+        <div class="contact-item">
+            <strong data-i18n="pages.contact.info.workHours">工作时间：</strong>
+            <span data-i18n="pages.contact.info.workHoursDetail">周一至周五 9:00-18:00</span>
+        </div>
+    </div>
+
+    <div class="contact-form">
+        <h2 data-i18n="pages.contact.form.title">发送消息</h2>
+        <form id="contactForm">
+            <div class="form-group">
+                <label data-i18n="pages.contact.form.name">姓名：</label>
+                <input type="text" id="name" data-i18n-placeholder="pages.contact.form.namePlaceholder" required>
+            </div>
+            <div class="form-group">
+                <label data-i18n="pages.contact.form.email">邮箱：</label>
+                <input type="email" id="email" data-i18n-placeholder="pages.contact.form.emailPlaceholder" required>
+            </div>
+            <div class="form-group">
+                <label data-i18n="pages.contact.form.message">消息：</label>
+                <textarea id="message" rows="5" data-i18n-placeholder="pages.contact.form.messagePlaceholder" required></textarea>
+            </div>
+            <button type="submit" data-i18n="pages.contact.form.submit">发送消息</button>
+        </form>
+    </div>
+</div>
+
+<div class="back-link">
+    <a href="/pages/home.html" data-i18n="common.backToHome">← 返回首页</a>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('contactForm');
+    if (form) {
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('消息发送功能需要后端支持，这里仅作演示。');
+        });
+    }
+});
+</script>
