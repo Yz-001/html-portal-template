@@ -1,40 +1,114 @@
-.hero {
+.slides-box {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+}
+
+.slides-container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    min-width: 100%;
+    height: 100%;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+}
+
+.slide-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
     text-align: center;
-    padding: 6rem 0;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
-    border-radius: 0 0 20px 20px;
-    margin-bottom: 4rem;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+    max-width: 800px;
+    width: 90%;
 }
 
-.hero h1 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-    font-weight: 700;
+.slide-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
 }
 
-.hero p {
+.slide-content p {
     font-size: 1.2rem;
-    margin-bottom: 2rem;
-    opacity: 0.9;
+    margin-bottom: 20px;
 }
 
-.hero .cta-button {
+.cta-button {
     display: inline-block;
-    padding: 1rem 2rem;
-    background: #3498db;
+    background-color: #007bff;
     color: white;
+    padding: 10px 20px;
     text-decoration: none;
-    border-radius: 5px;
-    transition: all 0.3s;
-    font-weight: 600;
-    border: none;
-    cursor: pointer;
+    border-radius: 4px;
+    font-weight: bold;
+    transition: background-color 0.3s;
 }
 
-.hero .cta-button:hover {
-    background: #2980b9;
-    transform: translateY(-2px);
+.cta-button:hover {
+    background-color: #0056b3;
+}
+
+/* 导航按钮 */
+.slider-nav {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+}
+
+.nav-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.nav-dot.active {
+    background-color: white;
+}
+
+/* 左右箭头 */
+.slider-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 20px;
+    transition: background-color 0.3s;
+    z-index: 10;
+}
+
+.slider-arrow:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.arrow-left {
+    left: 20px;
+}
+
+.arrow-right {
+    right: 20px;
 }
 
 .home-content .features {
@@ -125,13 +199,24 @@
     border-color: #3498db;
 }
 
+/* 响应式设计 */
 @media (max-width: 768px) {
-    .hero {
-        padding: 4rem 0;
+    .slides-box {
+        height: 400px;
     }
-
-    .hero h1 {
+    
+    .slide-content h1 {
         font-size: 2rem;
+    }
+    
+    .slide-content p {
+        font-size: 1rem;
+    }
+    
+    .slider-arrow {
+        width: 35px;
+        height: 35px;
+        font-size: 16px;
     }
 
     .home-content .features h2,
@@ -141,8 +226,21 @@
 }
 
 @media (max-width: 480px) {
-    .hero h1 {
-        font-size: 1.8rem;
+    .slides-box {
+        height: 300px;
+    }
+    
+    .slide-content h1 {
+        font-size: 1.5rem;
+    }
+    
+    .slide-content p {
+        font-size: 0.9rem;
+    }
+    
+    .cta-button {
+        padding: 8px 16px;
+        font-size: 0.9rem;
     }
 
     .home-content .features-grid,
