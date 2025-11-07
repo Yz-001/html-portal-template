@@ -12,7 +12,7 @@
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     text-align: center;
     transition: transform 0.3s;
-    border-top: 4px solid #3498db;
+    border-top: 4px solid var(--primary-color);
 }
 
 .services-content .service-card:hover {
@@ -25,13 +25,13 @@
 }
 
 .services-content .service-card h3 {
-    color: #2c3e50;
+    color: var(--secondary-color);
     margin-bottom: 1rem;
     font-size: 1.4rem;
 }
 
 .services-content .service-card p {
-    color: #7f8c8d;
+    color: var(--text-subtitle);
     margin-bottom: 1.5rem;
     line-height: 1.6;
 }

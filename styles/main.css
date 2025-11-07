@@ -23,6 +23,199 @@ body {
     flex: 1;
 }
 
+/* 主题样式 */
+:root {
+    /* 默认主题变量 */
+    --primary-color: #3498db;
+    --secondary-color: #2c3e50;
+    --accent-color: #2ecc71;
+    
+    /* 文字颜色 */
+    --text-title: #3498db;           /* 大标题颜色 */
+    --text-primary: #2c3e50;         /* 一级文字颜色 */
+    --text-secondary: #bdc3c7;       /* 二级文字颜色 */
+    --text-tertiary: #495057;        /* 三级文字颜色 */
+    --text-subtitle: #7f8c8d;        /* 子标题颜色 */
+    --text-inverse: #ecf0f1;         /* 反色文字 */
+    
+    /* 背景颜色 */
+    --bg-primary: #ffffff;
+    --bg-secondary: #f8f9fa;
+    --bg-tertiary: #e9ecef;
+    --bg-overlay: rgba(0, 0, 0, 0.5);
+    
+    /* 边框和阴影 */
+    --border-color: #dee2e6;
+    --border-light: #f1f2f6;
+    --border-dark: #34495e;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --shadow-dark: rgba(0, 0, 0, 0.2);
+    
+    /* 状态颜色 */
+    --hover-color: rgba(52, 152, 219, 0.1);
+    --active-color: rgba(52, 152, 219, 0.2);
+    --success-color: #27ae60;
+    --warning-color: #f39c12;
+    --error-color: #e74c3c;
+    --info-color: var(--primary-color);
+    
+    /* 导航栏专用变量（保持兼容性） */
+    --navbar-bg: #2c3e50;
+    --navbar-text: #ecf0f1;
+    --navbar-hover: rgba(52, 73, 94, 0.8);
+    --navbar-active: rgba(52, 152, 219, 0.15);
+    --navbar-active-border: var(--primary-color);
+    --navbar-brand: var(--primary-color);
+    --dropdown-bg: white;
+    --dropdown-text: #2c3e50;
+    --dropdown-hover: var(--primary-color);
+    --dropdown-hover-text: white;
+}
+
+/* 深色主题 */
+[data-theme="dark"] {
+    --primary-color: #4dabf7;
+    --secondary-color: #1a1a1a;
+    --accent-color: #00d4aa;
+    
+    /* 文字颜色 */
+    --text-title: #4dabf7;
+    --text-primary: #e0e0e0;
+    --text-secondary: #a0a0a0;
+    --text-tertiary: #888888;
+    --text-subtitle: #95a5a6;
+    --text-inverse: #ffffff;
+    
+    /* 背景颜色 */
+    --bg-primary: #1a1a1a;
+    --bg-secondary: #2d2d2d;
+    --bg-tertiary: #3a3a3a;
+    --bg-overlay: rgba(0, 0, 0, 0.7);
+    
+    /* 边框和阴影 */
+    --border-color: #444444;
+    --border-light: #555555;
+    --border-dark: #333333;
+    --shadow-color: rgba(0, 0, 0, 0.3);
+    --shadow-dark: rgba(0, 0, 0, 0.5);
+    
+    /* 状态颜色 */
+    --hover-color: rgba(77, 171, 247, 0.2);
+    --active-color: rgba(77, 171, 247, 0.3);
+    --success-color: #2ecc71;
+    --warning-color: #f1c40f;
+    --error-color: #e74c3c;
+    --info-color: #4dabf7;
+    
+    /* 导航栏专用变量 */
+    --navbar-bg: #1a1a1a;
+    --navbar-text: #e0e0e0;
+    --navbar-hover: rgba(60, 60, 60, 0.8);
+    --navbar-active: rgba(100, 100, 100, 0.3);
+    --navbar-active-border: #666;
+    --navbar-brand: #4dabf7;
+    --dropdown-bg: #2d2d2d;
+    --dropdown-text: #e0e0e0;
+    --dropdown-hover: #4dabf7;
+    --dropdown-hover-text: white;
+}
+
+/* 浅色主题 */
+[data-theme="light"] {
+    --primary-color: #2980dd;
+    --secondary-color: #6c757d;
+    --accent-color: #28a745;
+    
+    /* 文字颜色 */
+    --text-title: #2980dd;
+    --text-primary: #333333;
+    --text-secondary: #6c757d;
+    --text-tertiary: #495057;
+    --text-subtitle: #7f8c8d;
+    --text-inverse: #ffffff;
+    
+    /* 背景颜色 */
+    --bg-primary: #ffffff;
+    --bg-secondary: #f8f9fa;
+    --bg-tertiary: #e9ecef;
+    --bg-overlay: rgba(0, 0, 0, 0.5);
+    
+    /* 边框和阴影 */
+    --border-color: #dee2e6;
+    --border-light: #f1f2f6;
+    --border-dark: #adb5bd;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --shadow-dark: rgba(0, 0, 0, 0.2);
+    
+    /* 状态颜色 */
+    --hover-color: rgba(0, 123, 255, 0.1);
+    --active-color: rgba(0, 123, 255, 0.2);
+    --success-color: #28a745;
+    --warning-color: #ffc107;
+    --error-color: #dc3545;
+    --info-color: #17a2b8;
+    
+    /* 导航栏专用变量 */
+    --navbar-bg: #ffffff;
+    --navbar-text: #333333;
+    --navbar-hover: rgba(240, 240, 240, 0.8);
+    --navbar-active: rgba(200, 200, 200, 0.3);
+    --navbar-active-border: #666;
+    --navbar-brand: #007bff;
+    --dropdown-bg: white;
+    --dropdown-text: #333333;
+    --dropdown-hover: #007bff;
+    --dropdown-hover-text: white;
+}
+
+/* 蓝色主题 */
+[data-theme="blue"] {
+    --primary-color: #8ab4f8;
+    --secondary-color: #1e3a5f;
+    --accent-color: #34a853;
+    
+    /* 文字颜色 */
+    --text-title: #8ab4f8;
+    --text-primary: #e3f2fd;
+    --text-secondary: #bbdefb;
+    --text-tertiary: #90caf9;
+    --text-subtitle: #64b5f6;
+    --text-inverse: #ffffff;
+    
+    /* 背景颜色 */
+    --bg-primary: #1e3a5f;
+    --bg-secondary: #2c5282;
+    --bg-tertiary: #1e4a7e;
+    --bg-overlay: rgba(0, 0, 0, 0.6);
+    
+    /* 边框和阴影 */
+    --border-color: #2d3748;
+    --border-light: #4a5568;
+    --border-dark: #1a202c;
+    --shadow-color: rgba(0, 0, 0, 0.2);
+    --shadow-dark: rgba(0, 0, 0, 0.4);
+    
+    /* 状态颜色 */
+    --hover-color: rgba(138, 180, 248, 0.2);
+    --active-color: rgba(138, 180, 248, 0.3);
+    --success-color: #34a853;
+    --warning-color: #fbbc05;
+    --error-color: #ea4335;
+    --info-color: #4285f4;
+    
+    /* 导航栏专用变量 */
+    --navbar-bg: #1e3a5f;
+    --navbar-text: #e3f2fd;
+    --navbar-hover: rgba(30, 58, 95, 0.8);
+    --navbar-active: rgba(66, 133, 244, 0.2);
+    --navbar-active-border: #4285f4;
+    --navbar-brand: #8ab4f8;
+    --dropdown-bg: #2c5282;
+    --dropdown-text: #e3f2fd;
+    --dropdown-hover: #4299e1;
+    --dropdown-hover-text: white;
+}
+
 /* 返回链接 */
 .back-link {
     text-align: center;

@@ -39,33 +39,68 @@
                 <a href="contact.html" class="navbar__link" data-i18n="nav.contact">联系我们</a>
             </li>
         </ul>
-        
-        <div class="navbar__language navbar__item--dropdown">
-            <button class="navbar__link navbar__link--dropdown">
-                <span class="navbar__language-current">中文</span>
-                <span class="navbar__dropdown-arrow">▼</span>
-            </button>
-            <ul class="navbar__dropdown-menu">
-                <li class="navbar__dropdown-item">
-                    <button class="navbar__language-option" data-lang="zh-CN">
-                        <span class="navbar__language-flag">🇨🇳</span>
-                        <span>中文</span>
-                    </button>
-                </li>
-                <li class="navbar__dropdown-item">
-                    <button class="navbar__language-option" data-lang="en-US">
-                        <span class="navbar__language-flag">🇺🇸</span>
-                        <span>English</span>
-                    </button>
-                </li>
-            </ul>
+
+        <div class="navbar__options">
+            <div class="navbar__theme navbar__item--dropdown">
+                <button class="navbar__link navbar__link--dropdown">
+                    <span class="navbar__theme-current">默认主题</span>
+                    <span class="navbar__dropdown-arrow">▼</span>
+                </button>
+                <ul class="navbar__dropdown-menu">
+                    <li class="navbar__dropdown-item">
+                        <button class="navbar__theme-option" data-theme="default">
+                            <span class="navbar__theme-icon">🎨</span>
+                            <span>默认主题</span>
+                        </button>
+                    </li>
+                    <li class="navbar__dropdown-item">
+                        <button class="navbar__theme-option" data-theme="dark">
+                            <span class="navbar__theme-icon">🌙</span>
+                            <span>深色主题</span>
+                        </button>
+                    </li>
+                    <li class="navbar__dropdown-item">
+                        <button class="navbar__theme-option" data-theme="light">
+                            <span class="navbar__theme-icon">☀️</span>
+                            <span>浅色主题</span>
+                        </button>
+                    </li>
+                    <li class="navbar__dropdown-item">
+                        <button class="navbar__theme-option" data-theme="blue">
+                            <span class="navbar__theme-icon">🔵</span>
+                            <span>蓝色主题</span>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="navbar__language navbar__item--dropdown">
+                <button class="navbar__link navbar__link--dropdown">
+                    <span class="navbar__language-current">中文</span>
+                    <span class="navbar__dropdown-arrow">▼</span>
+                </button>
+                <ul class="navbar__dropdown-menu">
+                    <li class="navbar__dropdown-item">
+                        <button class="navbar__language-option" data-lang="zh-CN">
+                            <span class="navbar__language-flag">🇨🇳</span>
+                            <span>中文</span>
+                        </button>
+                    </li>
+                    <li class="navbar__dropdown-item">
+                        <button class="navbar__language-option" data-lang="en-US">
+                            <span class="navbar__language-flag">🇺🇸</span>
+                            <span>English</span>
+                        </button>
+                    </li>
+                </ul>
+            </div>
         </div>
     </div>
 </nav>
 
 <style>
 .navbar {
-    background: #2c3e50;
+    background: var(--navbar-bg);
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     position: sticky;
     top: 0;
@@ -85,7 +120,7 @@
 .navbar__brand {
     font-size: 1.5rem;
     font-weight: bold;
-    color: #3498db;
+    color: var(--navbar-brand);
     display: flex;
     align-items: center;
     gap: 8px;
@@ -108,7 +143,7 @@
 }
 
 .navbar__link {
-    color: #ecf0f1;
+    color: var(--navbar-text);
     text-decoration: none;
     padding: 0 1.5rem;
     height: 100%;
@@ -127,12 +162,12 @@
 
 .navbar__link:hover {
     color: white;
-    background-color: rgba(52, 73, 94, 0.8);
+    background-color: var(--navbar-hover);
 }
 
 .navbar__link--active {
     color: white;
-    background-color: rgba(52, 152, 219, 0.15);
+    background-color: var(--navbar-active);
 }
 
 .navbar__link--active::before {
@@ -142,7 +177,7 @@
     left: 0;
     right: 0;
     height: 2px;
-    background: #3498db;
+    background: var(--navbar-active-border);
 }
 
 .navbar__item--dropdown {
@@ -154,6 +189,10 @@
     align-items: center;
     gap: 0.5rem;
     padding-right: 1.2rem;
+}
+
+.navbar__options{
+    display: flex;
 }
 
 .navbar__dropdown-arrow {
@@ -169,7 +208,7 @@
     position: absolute;
     top: 100%;
     left: 0;
-    background: white;
+    background: var(--dropdown-bg);
     min-width: 180px;
     box-shadow: 0 5px 20px rgba(0,0,0,0.15);
     border-radius: 0 0 8px 8px;
@@ -181,10 +220,11 @@
     list-style: none;
     margin: 0;
     padding: 0;
-    border-top: 2px solid #3498db;
+    border-top: 2px solid var(--navbar-active-border);
 }
 
-.navbar__language .navbar__dropdown-menu {
+.navbar__language .navbar__dropdown-menu,
+.navbar__theme .navbar__dropdown-menu {
     left: auto;
     right: 0;
 }
@@ -196,7 +236,7 @@
 }
 
 .navbar__dropdown-item {
-    border-bottom: 1px solid #f8f9fa;
+    border-bottom: 1px solid var(--border-light);
 }
 
 .navbar__dropdown-item:last-child {
@@ -204,10 +244,11 @@
 }
 
 .navbar__dropdown-link,
-.navbar__language-option {
+.navbar__language-option,
+.navbar__theme-option {
     display: block;
     padding: 0.8rem 1.2rem;
-    color: #2c3e50;
+    color: var(--dropdown-text);
     text-decoration: none;
     transition: all 0.2s ease;
     font-size: 0.95rem;
@@ -221,25 +262,29 @@
 }
 
 .navbar__dropdown-link:hover,
-.navbar__language-option:hover {
-    background-color: #3498db;
-    color: white;
+.navbar__language-option:hover,
+.navbar__theme-option:hover {
+    background-color: var(--dropdown-hover);
+    color: var(--dropdown-hover-text);
 }
 
-.navbar__language {
+.navbar__language,
+.navbar__theme {
     position: relative;
     height: 100%;
     display: flex;
     align-items: center;
 }
 
-.navbar__language-option {
+.navbar__language-option,
+.navbar__theme-option {
     display: flex;
     align-items: center;
     gap: 0.8rem;
 }
 
-.navbar__language-flag {
+.navbar__language-flag,
+.navbar__theme-icon {
     font-size: 1.1rem;
     width: 20px;
     text-align: center;
@@ -261,7 +306,7 @@
     .navbar__item {
         width: 100%;
         height: auto;
-        border-bottom: 1px solid #34495e;
+        border-bottom: 1px solid var(--navbar-hover);
     }
     
     .navbar__link {
@@ -273,7 +318,7 @@
     .navbar__dropdown-menu {
         position: static;
         box-shadow: none;
-        background: #34495e;
+        background: var(--navbar-hover);
         display: none;
         width: 100%;
         border-radius: 0;
@@ -284,18 +329,20 @@
     }
     
     .navbar__dropdown-link,
-    .navbar__language-option {
-        color: #ecf0f1;
-        border-bottom: 1px solid #2c3e50;
+    .navbar__language-option,
+    .navbar__theme-option {
+        color: var(--navbar-text);
+        border-bottom: 1px solid var(--navbar-bg);
     }
     
     .navbar__item--dropdown.active .navbar__dropdown-menu {
         display: block;
     }
     
-    .navbar__language {
+    .navbar__language,
+    .navbar__theme {
         width: 100%;
-        border-bottom: 1px solid #34495e;
+        border-bottom: 1px solid var(--navbar-hover);
     }
     
     .navbar__link--active::before {
@@ -321,11 +368,19 @@ class Navbar {
             'en-US': 'English'
         };
         
+        this.themes = {
+            'default': '默认主题',
+            'dark': '深色主题',
+            'light': '浅色主题',
+            'blue': '蓝色主题'
+        };
+        
         this.init();
     }
     
     init() {
         this.initLanguage();
+        this.initTheme();
         this.highlightActive();
         this.bindEvents();
     }
@@ -333,6 +388,12 @@ class Navbar {
     initLanguage() {
         const lang = localStorage.getItem('portal_language') || 'zh-CN';
         this.updateLanguageDisplay(lang);
+    }
+    
+    initTheme() {
+        const theme = localStorage.getItem('portal_theme') || 'default';
+        this.updateThemeDisplay(theme);
+        this.applyTheme(theme);
     }
     
     highlightActive() {
@@ -373,20 +434,31 @@ class Navbar {
             
             // 移动端点击
             const toggle = dropdown.querySelector('.navbar__link--dropdown');
-            toggle.addEventListener('click', (e) => {
-                if (window.innerWidth <= 768) {
-                    e.preventDefault();
-                    dropdown.classList.toggle('active');
-                }
-            });
+            if (toggle) {
+                toggle.addEventListener('click', (e) => {
+                    if (window.innerWidth <= 768) {
+                        e.preventDefault();
+                        dropdown.classList.toggle('active');
+                    }
+                });
+            }
         });
         
         // 语言切换
         document.querySelectorAll('.navbar__language-option').forEach(option => {
             option.addEventListener('click', (e) => {
                 e.preventDefault();
-                const lang = e.target.closest('[data-lang]').getAttribute('data-lang');
+                const lang = e.currentTarget.getAttribute('data-lang');
                 this.switchLanguage(lang);
+            });
+        });
+        
+        // 主题切换 - 修复这里
+        document.querySelectorAll('.navbar__theme-option').forEach(option => {
+            option.addEventListener('click', (e) => {
+                e.preventDefault();
+                const theme = e.currentTarget.getAttribute('data-theme');
+                this.switchTheme(theme);
             });
         });
         
@@ -415,12 +487,30 @@ class Navbar {
         this.closeAllDropdowns();
     }
     
+    switchTheme(theme) {
+        this.updateThemeDisplay(theme);
+        this.applyTheme(theme);
+        this.closeAllDropdowns();
+    }
+    
     updateLanguageDisplay(lang) {
         const currentLangEl = document.querySelector('.navbar__language-current');
         if (currentLangEl && this.languages[lang]) {
             currentLangEl.textContent = this.languages[lang];
         }
         localStorage.setItem('portal_language', lang);
+    }
+    
+    updateThemeDisplay(theme) {
+        const currentThemeEl = document.querySelector('.navbar__theme-current');
+        if (currentThemeEl && this.themes[theme]) {
+            currentThemeEl.textContent = this.themes[theme];
+        }
+        localStorage.setItem('portal_theme', theme);
+    }
+    
+    applyTheme(theme) {
+        document.documentElement.setAttribute('data-theme', theme);
     }
     
     async loadTranslations(lang) {

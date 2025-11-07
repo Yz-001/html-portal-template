@@ -5,14 +5,14 @@
 
 .about-content .page-header h1 {
     font-size: 3rem;
-    color: #2c3e50;
+    color: var(--secondary-color);
     margin-bottom: 1rem;
     font-weight: 700;
 }
 
 .about-content .page-header p {
     font-size: 1.2rem;
-    color: #7f8c8d;
+    color: var(--text-subtitle);
 }
 
 .about-content .content-section {
@@ -24,7 +24,7 @@
 }
 
 .about-content .content-section h2 {
-    color: #2c3e50;
+    color: var(--secondary-color);
     margin-bottom: 1rem;
     font-size: 1.8rem;
 }
@@ -44,18 +44,18 @@
 .about-content .value-item {
     text-align: center;
     padding: 1.5rem;
-    background: #f8f9fa;
+    background: var(--bg-secondary);
     border-radius: 8px;
-    border-left: 4px solid #3498db;
+    border-left: 4px solid var(--primary-color);
 }
 
 .about-content .value-item h3 {
-    color: #2c3e50;
+    color: var(--secondary-color);
     margin-bottom: 0.5rem;
 }
 
 .about-content .value-item p {
-    color: #7f8c8d;
+    color: var(--text-subtitle);
     font-size: 0.9rem;
 }
 
