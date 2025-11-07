@@ -1,0 +1,69 @@
+.contact-content .page-header {
+    text-align: center;
+    padding: 4rem 0 2rem;
+}
+
+.contact-content .page-header h1 {
+    font-size: 3rem;
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.contact-content .page-header p {
+    font-size: 1.2rem;
+    color: var(--text-subtitle);
+}
+
+.contact-content .contact-form .form-group {
+    margin-bottom: 1.5rem;
+}
+
+.contact-content .contact-form .form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--secondary-color);
+    font-weight: 500;
+}
+
+.contact-content .contact-form .form-group input,
+.contact-content .contact-form .form-group textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 2px solid var(--text-inverse);
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+.contact-content .contact-form .form-group input:focus,
+.contact-content .contact-form .form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+.contact-content .contact-form button {
+    width: 100%;
+    padding: 1rem;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.contact-content .contact-form button:hover {
+    background: var(--primary-color);
+}
+
+@media (max-width: 768px) {
+    .contact-content .page-header h1 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+}

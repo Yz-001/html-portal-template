@@ -5,23 +5,195 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title data-i18n="pages.home.title">HTML门户模板 - 首页</title>
     <link rel="stylesheet" href="/styles/main.css">
+    <link rel="stylesheet" href="/styles/home.css">
 </head>
 <body>
     <div id="navbar-container"></div>
     
-    <section class="hero">
-        <h1 data-i18n="pages.home.hero.title">欢迎来到HTML门户模板</h1>
-        <p data-i18n="pages.home.hero.subtitle">一个简易开发的门户网站</p>
-        <a href="/pages/about.html" class="cta-button" data-i18n="common.learnMore">了解更多</a>
+    <!-- 滚动图片区域 -->
+    <section class="slides-box">
+        <div class="slides-container">
+            <!-- 第一张幻灯片 -->
+            <div class="slide" style="background-image: url('/imgs/home/banner1.jpg')">
+                <div class="slide-content">
+                    <h1 data-i18n="pages.home.hero.title">欢迎来到HTML门户模板</h1>
+                    <p data-i18n="pages.home.hero.subtitle">一个简易开发的门户网站</p>
+                    <a href="/pages/about.html" class="cta-button" data-i18n="common.learnMore">了解更多</a>
+                </div>
+            </div>
+            
+            <!-- 第二张幻灯片 -->
+            <div class="slide" style="background-image: url('/imgs/home/banner2.jpg')">
+                <div class="slide-content">
+                    <h1>响应式设计</h1>
+                    <p>适配各种设备，提供最佳浏览体验</p>
+                    <a href="/pages/features.html" class="cta-button">了解更多</a>
+                </div>
+            </div>
+            
+            <!-- 第三张幻灯片 -->
+            <div class="slide" style="background-image: url('/imgs/home/banner3.jpg')">
+                <div class="slide-content">
+                    <h1>易于维护</h1>
+                    <p>使用原生技术，代码清晰易维护</p>
+                    <a href="/pages/contact.html" class="cta-button">了解更多</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 导航点 -->
+        <div class="slider-nav">
+            <div class="nav-dot active" data-index="0"></div>
+            <div class="nav-dot" data-index="1"></div>
+            <div class="nav-dot" data-index="2"></div>
+        </div>
+        
+        <!-- 左右箭头 -->
+        <div class="slider-arrow arrow-left">&#10094;</div>
+        <div class="slider-arrow arrow-right">&#10095;</div>
     </section>
 
-
     <main class="container">
-        <div id="page-content"></div>
+        <div id="page-content" class="home-content"></div>
     </main>
 
     <div id="footer-container"></div>
 
+    <script>
+        // 图片轮播功能
+        document.addEventListener('DOMContentLoaded', function() {
+            const slider = document.querySelector('.slides-box');
+            const slidesContainer = document.querySelector('.slides-container');
+            const slides = document.querySelectorAll('.slide');
+            const dots = document.querySelectorAll('.nav-dot');
+            const prevArrow = document.querySelector('.arrow-left');
+            const nextArrow = document.querySelector('.arrow-right');
+            
+            let currentSlide = 0;
+            const totalSlides = slides.length;
+            let isTransitioning = false;
+            
+            // 更新轮播位置
+            function updateSlider(instant = false) {
+                if (isTransitioning) return;
+                
+                isTransitioning = true;
+                
+                if (instant) {
+                    slidesContainer.style.transition = 'none';
+                } else {
+                    slidesContainer.style.transition = 'transform 0.6s ease-in-out';
+                }
+                
+                slidesContainer.style.transform = `translateX(-${currentSlide * 100}%)`;
+                
+                // 更新导航点状态
+                dots.forEach((dot, index) => {
+                    dot.classList.toggle('active', index === currentSlide);
+                });
+                
+                // 重置动画状态
+                if (!instant) {
+                    setTimeout(() => {
+                        isTransitioning = false;
+                    }, 600);
+                } else {
+                    isTransitioning = false;
+                }
+            }
+            
+            // 下一张幻灯片
+            function nextSlide() {
+                if (isTransitioning) return;
+                
+                currentSlide = (currentSlide + 1) % totalSlides;
+                updateSlider();
+            }
+            
+            // 上一张幻灯片
+            function prevSlide() {
+                if (isTransitioning) return;
+                
+                currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+                updateSlider();
+            }
+            
+            // 跳转到指定幻灯片
+            function goToSlide(index) {
+                if (isTransitioning || index === currentSlide) return;
+                
+                currentSlide = index;
+                updateSlider();
+            }
+            
+            // 自动轮播
+            let autoSlideInterval = setInterval(nextSlide, 5000);
+            
+            // 鼠标悬停时暂停自动轮播
+            slider.addEventListener('mouseenter', () => {
+                clearInterval(autoSlideInterval);
+            });
+            
+            // 鼠标离开时恢复自动轮播
+            slider.addEventListener('mouseleave', () => {
+                autoSlideInterval = setInterval(nextSlide, 5000);
+            });
+            
+            // 事件监听
+            nextArrow.addEventListener('click', nextSlide);
+            prevArrow.addEventListener('click', prevSlide);
+            
+            dots.forEach(dot => {
+                dot.addEventListener('click', function() {
+                    const index = parseInt(this.getAttribute('data-index'));
+                    goToSlide(index);
+                });
+            });
+            
+            // 键盘导航
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'ArrowLeft') {
+                    prevSlide();
+                } else if (e.key === 'ArrowRight') {
+                    nextSlide();
+                }
+            });
+            
+            // 触摸滑动支持
+            let touchStartX = 0;
+            let touchEndX = 0;
+            
+            slider.addEventListener('touchstart', (e) => {
+                touchStartX = e.changedTouches[0].screenX;
+                clearInterval(autoSlideInterval);
+            });
+            
+            slider.addEventListener('touchend', (e) => {
+                touchEndX = e.changedTouches[0].screenX;
+                handleSwipe();
+                autoSlideInterval = setInterval(nextSlide, 5000);
+            });
+            
+            function handleSwipe() {
+                const swipeThreshold = 50;
+                const diff = touchStartX - touchEndX;
+                
+                if (Math.abs(diff) > swipeThreshold) {
+                    if (diff > 0) {
+                        // 向左滑动，下一张
+                        nextSlide();
+                    } else {
+                        // 向右滑动，上一张
+                        prevSlide();
+                    }
+                }
+            }
+            
+            // 初始化
+            updateSlider(true);
+        });
+    </script>
+    
     <script src="/js/i18n.js"></script>
     <script src="/js/component-loader.js"></script>
     <script>

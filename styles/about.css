@@ -1,0 +1,69 @@
+.about-content .page-header {
+    text-align: center;
+    padding: 4rem 0 2rem;
+}
+
+.about-content .page-header h1 {
+    font-size: 3rem;
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.about-content .page-header p {
+    font-size: 1.2rem;
+    color: var(--text-subtitle);
+}
+
+.about-content .content-section {
+    margin: 3rem 0;
+    padding: 2rem;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.about-content .content-section h2 {
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+}
+
+.about-content .content-section p {
+    color: #555;
+    line-height: 1.7;
+}
+
+.about-content .values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.about-content .value-item {
+    text-align: center;
+    padding: 1.5rem;
+    background: var(--bg-secondary);
+    border-radius: 8px;
+    border-left: 4px solid var(--primary-color);
+}
+
+.about-content .value-item h3 {
+    color: var(--secondary-color);
+    margin-bottom: 0.5rem;
+}
+
+.about-content .value-item p {
+    color: var(--text-subtitle);
+    font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+    .about-content .page-header h1 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+}
