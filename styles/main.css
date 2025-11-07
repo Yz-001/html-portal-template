@@ -23,72 +23,6 @@ body {
     flex: 1;
 }
 
-/* 导航栏样式 */
-.navbar {
-    background: #2c3e50;
-    color: white;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
-
-.navbar .nav-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 70px;
-}
-
-.navbar .nav-brand {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #3498db;
-}
-
-.navbar .nav-menu {
-    display: flex;
-    list-style: none;
-    gap: 2rem;
-    margin: 0;
-    padding: 0;
-}
-
-.navbar .nav-menu a {
-    color: white;
-    text-decoration: none;
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
-    transition: background-color 0.3s;
-}
-
-.navbar .nav-menu a:hover,
-.navbar .nav-menu a.active {
-    background-color: #34495e;
-}
-
-.navbar .language-switcher {
-    display: flex;
-    gap: 0.5rem;
-}
-
-.navbar .lang-btn {
-    padding: 0.5rem 1rem;
-    border: 1px solid #3498db;
-    background: transparent;
-    color: white;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: all 0.3s;
-}
-
-.navbar .lang-btn:hover {
-    background: #3498db;
-}
-
 /* 返回链接 */
 .back-link {
     text-align: center;
@@ -153,18 +87,6 @@ body {
 @media (max-width: 768px) {
     .container {
         padding: 0 1rem;
-    }
-    
-    .navbar .nav-container {
-        flex-direction: column;
-        height: auto;
-        padding: 1rem;
-    }
-    
-    .navbar .nav-menu {
-        margin: 1rem 0;
-        flex-wrap: wrap;
-        justify-content: center;
     }
 }
 

@@ -10,9 +10,8 @@
                 <a href="home.html" class="navbar__link" data-i18n="nav.home">首页</a>
             </li>
             
-            <!-- 服务下拉菜单 -->
             <li class="navbar__item navbar__item--dropdown">
-                <button class="navbar__language-toggle navbar__link navbar__link--dropdown">
+                <button class="navbar__link navbar__link--dropdown">
                     <span data-i18n="nav.services.main">服务项目</span>
                     <span class="navbar__dropdown-arrow">▼</span>
                 </button>
@@ -41,13 +40,12 @@
             </li>
         </ul>
         
-        <!-- 语言切换下拉菜单 -->
         <div class="navbar__language navbar__item--dropdown">
-            <button class="navbar__language-toggle navbar__link navbar__link--dropdown">
+            <button class="navbar__link navbar__link--dropdown">
                 <span class="navbar__language-current">中文</span>
                 <span class="navbar__dropdown-arrow">▼</span>
             </button>
-            <ul class="navbar__dropdown-menu navbar__dropdown-menu--language">
+            <ul class="navbar__dropdown-menu">
                 <li class="navbar__dropdown-item">
                     <button class="navbar__language-option" data-lang="zh-CN">
                         <span class="navbar__language-flag">🇨🇳</span>
@@ -66,10 +64,8 @@
 </nav>
 
 <style>
-/* 基础导航样式 */
 .navbar {
     background: #2c3e50;
-    color: white;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     position: sticky;
     top: 0;
@@ -90,17 +86,14 @@
     font-size: 1.5rem;
     font-weight: bold;
     color: #3498db;
-
-    span {
-        position: relative;
-        top: -4px;
-    }
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
 
 .navbar__menu {
     display: flex;
     list-style: none;
-    gap: 0;
     margin: 0;
     padding: 0;
     height: 100%;
@@ -115,13 +108,13 @@
 }
 
 .navbar__link {
-    color: white;
+    color: #ecf0f1;
     text-decoration: none;
     padding: 0 1.5rem;
     height: 100%;
     display: flex;
     align-items: center;
-    transition: background-color 0.3s;
+    transition: all 0.3s ease;
     position: relative;
     white-space: nowrap;
     background: none;
@@ -129,14 +122,29 @@
     font-family: inherit;
     font-size: inherit;
     cursor: pointer;
+    font-weight: 500;
 }
 
-.navbar__link:hover,
+.navbar__link:hover {
+    color: white;
+    background-color: rgba(52, 73, 94, 0.8);
+}
+
 .navbar__link--active {
-    background-color: #34495e;
+    color: white;
+    background-color: rgba(52, 152, 219, 0.15);
 }
 
-/* 下拉菜单样式 */
+.navbar__link--active::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: #3498db;
+}
+
 .navbar__item--dropdown {
     position: relative;
 }
@@ -150,9 +158,7 @@
 
 .navbar__dropdown-arrow {
     font-size: 0.6em;
-    margin-left: 0.3rem;
     transition: transform 0.3s ease;
-    opacity: 0.8;
 }
 
 .navbar__item--dropdown:hover .navbar__dropdown-arrow {
@@ -162,6 +168,7 @@
 .navbar__dropdown-menu {
     position: absolute;
     top: 100%;
+    left: 0;
     background: white;
     min-width: 180px;
     box-shadow: 0 5px 20px rgba(0,0,0,0.15);
@@ -174,13 +181,12 @@
     list-style: none;
     margin: 0;
     padding: 0;
-    border-top: 3px solid #3498db;
+    border-top: 2px solid #3498db;
 }
 
-.navbar__dropdown-menu--language {
-    right: 0;
+.navbar__language .navbar__dropdown-menu {
     left: auto;
-    min-width: 160px;
+    right: 0;
 }
 
 .navbar__item--dropdown:hover .navbar__dropdown-menu {
@@ -190,17 +196,18 @@
 }
 
 .navbar__dropdown-item {
-    border-bottom: 1px solid #f5f5f5;
+    border-bottom: 1px solid #f8f9fa;
 }
 
 .navbar__dropdown-item:last-child {
     border-bottom: none;
 }
 
-.navbar__dropdown-link {
+.navbar__dropdown-link,
+.navbar__language-option {
     display: block;
     padding: 0.8rem 1.2rem;
-    color: #333;
+    color: #2c3e50;
     text-decoration: none;
     transition: all 0.2s ease;
     font-size: 0.95rem;
@@ -209,16 +216,16 @@
     width: 100%;
     background: none;
     border: none;
+    cursor: pointer;
     font-family: inherit;
 }
 
-.navbar__dropdown-link:hover {
+.navbar__dropdown-link:hover,
+.navbar__language-option:hover {
     background-color: #3498db;
     color: white;
-    padding-left: 1.5rem;
 }
 
-/* 语言切换器样式 */
 .navbar__language {
     position: relative;
     height: 100%;
@@ -226,46 +233,10 @@
     align-items: center;
 }
 
-.navbar__language-toggle {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0 1.2rem;
-    color: white;
-    background: none;
-    border: none;
-    cursor: pointer;
-    font-family: inherit;
-    font-size: inherit;
-    height: 100%;
-}
-
-.navbar__language-current {
-    font-size: 0.95rem;
-}
-
 .navbar__language-option {
     display: flex;
     align-items: center;
     gap: 0.8rem;
-    padding: 0.8rem 1.2rem;
-    color: #333;
-    text-decoration: none;
-    transition: all 0.2s ease;
-    font-size: 0.95rem;
-    white-space: nowrap;
-    text-align: left;
-    width: 100%;
-    background: none;
-    border: none;
-    cursor: pointer;
-    font-family: inherit;
-}
-
-.navbar__language-option:hover {
-    background-color: #3498db;
-    color: white;
-    padding-left: 1.5rem;
 }
 
 .navbar__language-flag {
@@ -274,7 +245,6 @@
     text-align: center;
 }
 
-/* 移动端适配 */
 @media (max-width: 768px) {
     .navbar__container {
         flex-direction: column;
@@ -286,7 +256,6 @@
         flex-direction: column;
         width: 100%;
         margin: 1rem 0;
-        gap: 0;
     }
     
     .navbar__item {
@@ -295,64 +264,33 @@
         border-bottom: 1px solid #34495e;
     }
     
-    .navbar__item:last-child {
-        border-bottom: none;
-    }
-    
     .navbar__link {
         padding: 1rem 1.5rem;
         width: 100%;
         justify-content: space-between;
     }
     
-    .navbar__link--dropdown::after {
-        content: "›";
-        transform: rotate(90deg);
-        transition: transform 0.3s;
-    }
-    
     .navbar__dropdown-menu {
         position: static;
-        opacity: 1;
-        visibility: visible;
-        transform: none;
         box-shadow: none;
         background: #34495e;
         display: none;
         width: 100%;
         border-radius: 0;
         border-top: none;
-        margin-left: 1rem;
-    }
-    
-    .navbar__dropdown-menu--language {
-        margin-left: 0;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
     }
     
     .navbar__dropdown-link,
     .navbar__language-option {
         color: #ecf0f1;
-        padding: 0.8rem 1.2rem;
         border-bottom: 1px solid #2c3e50;
-    }
-    
-    .navbar__dropdown-link:hover,
-    .navbar__language-option:hover {
-        background-color: #3498db;
-        padding-left: 1.5rem;
-    }
-    
-    .navbar__dropdown-item:last-child .navbar__dropdown-link,
-    .navbar__dropdown-item:last-child .navbar__language-option {
-        border-bottom: none;
     }
     
     .navbar__item--dropdown.active .navbar__dropdown-menu {
         display: block;
-    }
-    
-    .navbar__item--dropdown.active .navbar__link--dropdown::after {
-        transform: rotate(-90deg);
     }
     
     .navbar__language {
@@ -360,276 +298,167 @@
         border-bottom: 1px solid #34495e;
     }
     
-    .navbar__language-toggle {
-        width: 100%;
-        justify-content: space-between;
+    .navbar__link--active::before {
+        display: none;
     }
 }
 </style>
 
 <script>
-// 导航栏功能 - 独立脚本
-(function() {
-    'use strict';
-    
-    console.log('🚀 导航栏脚本开始加载...');
-    
-    // 等待DOM完全加载
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', initNavbar);
-    } else {
-        initNavbar();
-    }
-    
-    function initNavbar() {
-        console.log('🎯 初始化导航栏...');
+class Navbar {
+    constructor() {
+        this.pageMap = {
+            'home.html': { type: 'home', selector: '.navbar__link[href="home.html"]' },
+            'index.html': { type: 'home', selector: '.navbar__link[href="home.html"]' },
+            '': { type: 'home', selector: '.navbar__link[href="home.html"]' },
+            'services.html': { type: 'services', selector: '.navbar__item--dropdown .navbar__link' },
+            'about.html': { type: 'about', selector: '.navbar__link[href="about.html"]' },
+            'contact.html': { type: 'contact', selector: '.navbar__link[href="contact.html"]' }
+        };
         
-        // 初始化语言显示
-        initLanguageDisplay();
-        
-        // 设置下拉菜单事件
-        setupDropdowns();
-        
-        // 设置语言切换事件
-        setupLanguageSwitcher();
-        
-        console.log('✅ 导航栏初始化完成');
-    }
-    
-    function setupDropdowns() {
-        console.log('🔄 设置下拉菜单...');
-        
-        // 桌面端悬停效果
-        const dropdownItems = document.querySelectorAll('.navbar__item--dropdown');
-        dropdownItems.forEach(item => {
-            item.addEventListener('mouseenter', function() {
-                if (window.innerWidth > 768) {
-                    this.classList.add('hover');
-                }
-            });
-            
-            item.addEventListener('mouseleave', function() {
-                if (window.innerWidth > 768) {
-                    this.classList.remove('hover');
-                }
-            });
-        });
-        
-        // 移动端点击效果
-        const dropdownToggles = document.querySelectorAll('.navbar__link--dropdown, .navbar__language-toggle');
-        console.log(`找到 ${dropdownToggles.length} 个下拉切换按钮`);
-        
-        dropdownToggles.forEach(toggle => {
-            toggle.addEventListener('click', function(e) {
-                console.log('📱 移动端下拉菜单点击');
-                if (window.innerWidth <= 768) {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    
-                    const dropdown = this.closest('.navbar__item--dropdown');
-                    const isActive = dropdown.classList.contains('active');
-                    
-                    // 关闭所有其他下拉菜单
-                    document.querySelectorAll('.navbar__item--dropdown').forEach(item => {
-                        if (item !== dropdown) {
-                            item.classList.remove('active');
-                        }
-                    });
-                    
-                    // 切换当前下拉菜单
-                    dropdown.classList.toggle('active', !isActive);
-                }
-            });
-        });
-        
-        // 点击页面其他地方关闭下拉菜单
-        document.addEventListener('click', function(e) {
-            if (!e.target.closest('.navbar__item--dropdown')) {
-                document.querySelectorAll('.navbar__item--dropdown').forEach(item => {
-                    item.classList.remove('active');
-                    item.classList.remove('hover');
-                });
-            }
-        });
-        
-        // 窗口大小变化时重置
-        window.addEventListener('resize', function() {
-            if (window.innerWidth > 768) {
-                document.querySelectorAll('.navbar__item--dropdown').forEach(item => {
-                    item.classList.remove('active');
-                });
-            }
-        });
-    }
-    
-    function setupLanguageSwitcher() {
-        console.log('🌐 设置语言切换器...');
-        
-        const languageOptions = document.querySelectorAll('.navbar__language-option');
-        console.log(`找到 ${languageOptions.length} 个语言选项`);
-        
-        languageOptions.forEach(option => {
-            // 移除所有现有的事件监听器
-            const newOption = option.cloneNode(true);
-            option.parentNode.replaceChild(newOption, option);
-            
-            // 添加新的事件监听器
-            newOption.addEventListener('click', function(e) {
-                e.preventDefault();
-                e.stopPropagation();
-                
-                const lang = this.getAttribute('data-lang');
-                console.log(`🎯 语言切换点击: ${lang}`);
-                
-                // 更新当前语言显示
-                updateCurrentLanguageDisplay(lang);
-                
-                // 触发语言切换
-                triggerLanguageChange(lang);
-                
-                // 关闭下拉菜单
-                closeAllDropdowns();
-            });
-        });
-        
-        console.log('✅ 语言切换器设置完成');
-    }
-    
-    function updateCurrentLanguageDisplay(lang) {
-        const currentLangElement = document.querySelector('.navbar__language-current');
-        const languageMap = {
+        this.languages = {
             'zh-CN': '中文',
             'en-US': 'English'
         };
         
-        if (currentLangElement && languageMap[lang]) {
-            currentLangElement.textContent = languageMap[lang];
-            console.log(`📝 更新语言显示为: ${languageMap[lang]}`);
-        }
-        
-        // 保存到本地存储
-        localStorage.setItem('portal_language', lang);
-        console.log(`💾 保存语言到本地存储: ${lang}`);
+        this.init();
     }
     
-    function triggerLanguageChange(lang) {
-        console.log(`🔄 触发语言切换: ${lang}`);
+    init() {
+        this.initLanguage();
+        this.highlightActive();
+        this.bindEvents();
+    }
+    
+    initLanguage() {
+        const lang = localStorage.getItem('portal_language') || 'zh-CN';
+        this.updateLanguageDisplay(lang);
+    }
+    
+    highlightActive() {
+        const currentPage = this.getCurrentPage();
+        const pageConfig = this.pageMap[currentPage] || this.pageMap['home.html'];
         
-        // 方法1: 使用全局函数
-        if (typeof window.changeLanguage === 'function') {
-            console.log('🔧 使用全局 changeLanguage 函数');
-            window.changeLanguage(lang);
-            return;
+        // 移除所有高亮
+        document.querySelectorAll('.navbar__link').forEach(link => {
+            link.classList.remove('navbar__link--active');
+        });
+        
+        // 设置当前页面高亮
+        if (pageConfig && pageConfig.selector) {
+            const activeElement = document.querySelector(pageConfig.selector);
+            if (activeElement) {
+                activeElement.classList.add('navbar__link--active');
+            }
         }
+    }
+    
+    getCurrentPage() {
+        return window.location.pathname.split('/').pop() || 'home.html';
+    }
+    
+    bindEvents() {
+        // 下拉菜单
+        const dropdowns = document.querySelectorAll('.navbar__item--dropdown');
         
-        // 方法2: 使用初始化函数
-        if (typeof window.initI18n === 'function') {
-            console.log('🔧 使用全局 initI18n 函数');
-            // 保存语言设置后重新初始化
+        dropdowns.forEach(dropdown => {
+            // 桌面端悬停
+            dropdown.addEventListener('mouseenter', () => {
+                if (window.innerWidth > 768) dropdown.classList.add('hover');
+            });
+            
+            dropdown.addEventListener('mouseleave', () => {
+                if (window.innerWidth > 768) dropdown.classList.remove('hover');
+            });
+            
+            // 移动端点击
+            const toggle = dropdown.querySelector('.navbar__link--dropdown');
+            toggle.addEventListener('click', (e) => {
+                if (window.innerWidth <= 768) {
+                    e.preventDefault();
+                    dropdown.classList.toggle('active');
+                }
+            });
+        });
+        
+        // 语言切换
+        document.querySelectorAll('.navbar__language-option').forEach(option => {
+            option.addEventListener('click', (e) => {
+                e.preventDefault();
+                const lang = e.target.closest('[data-lang]').getAttribute('data-lang');
+                this.switchLanguage(lang);
+            });
+        });
+        
+        // 点击外部关闭下拉菜单
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.navbar__item--dropdown')) {
+                dropdowns.forEach(dropdown => {
+                    dropdown.classList.remove('active', 'hover');
+                });
+            }
+        });
+    }
+    
+    switchLanguage(lang) {
+        this.updateLanguageDisplay(lang);
+        
+        if (window.changeLanguage) {
+            window.changeLanguage(lang);
+        } else if (window.initI18n) {
             localStorage.setItem('portal_language', lang);
             window.initI18n();
-            return;
+        } else {
+            this.loadTranslations(lang);
         }
         
-        // 方法3: 使用本地函数
-        console.log('🔧 使用本地语言切换函数');
-        switchLanguage(lang);
+        this.closeAllDropdowns();
     }
     
-    async function switchLanguage(lang) {
-        console.log(`🌍 开始切换语言到: ${lang}`);
-        
+    updateLanguageDisplay(lang) {
+        const currentLangEl = document.querySelector('.navbar__language-current');
+        if (currentLangEl && this.languages[lang]) {
+            currentLangEl.textContent = this.languages[lang];
+        }
+        localStorage.setItem('portal_language', lang);
+    }
+    
+    async loadTranslations(lang) {
         try {
-            // 确定基础路径
             let basePath = './';
-            const currentPath = window.location.pathname;
-            
-            if (currentPath.includes('/pages/services/')) {
-                basePath = '../../';
-            } else if (currentPath.includes('/pages/')) {
-                basePath = '../';
-            }
-            
-            console.log(`📁 基础路径: ${basePath}`);
+            const path = window.location.pathname;
+            if (path.includes('/pages/services/')) basePath = '../../';
+            else if (path.includes('/pages/')) basePath = '../';
             
             const response = await fetch(`${basePath}locales/${lang}.json`);
-            
-            if (!response.ok) {
-                throw new Error(`HTTP错误! 状态: ${response.status}`);
-            }
-            
             const translations = await response.json();
-            console.log('✅ 加载语言文件成功');
-            
-            // 应用翻译
-            applyTranslations(translations, lang);
-            
+            this.applyTranslations(translations, lang);
         } catch (error) {
-            console.error('❌ 切换语言失败:', error);
+            console.error('语言切换失败:', error);
         }
     }
     
-    function applyTranslations(translations, lang) {
-        let translatedCount = 0;
-        
+    applyTranslations(translations, lang) {
         document.querySelectorAll('[data-i18n]').forEach(element => {
             const key = element.getAttribute('data-i18n');
-            const translation = getNestedTranslation(translations, key);
-            
-            if (translation) {
-                element.textContent = translation;
-                translatedCount++;
-            }
+            const value = key.split('.').reduce((obj, k) => obj?.[k], translations);
+            if (value) element.textContent = value;
         });
         
-        console.log(`📊 翻译了 ${translatedCount} 个元素`);
-        
-        // 更新页面标题
-        updatePageTitle(translations);
-        
-        // 更新HTML lang属性
         document.documentElement.lang = lang;
-        
-        console.log(`✅ 语言切换完成: ${lang}`);
     }
     
-    function updatePageTitle(translations) {
-        const titleElement = document.querySelector('title');
-        if (titleElement) {
-            const titleKey = titleElement.getAttribute('data-i18n');
-            if (titleKey) {
-                const titleTranslation = getNestedTranslation(translations, titleKey);
-                if (titleTranslation) {
-                    document.title = titleTranslation;
-                    console.log('📄 更新页面标题:', titleTranslation);
-                }
-            }
-        }
-    }
-    
-    function getNestedTranslation(obj, key) {
-        return key.split('.').reduce((o, i) => o?.[i], obj);
-    }
-    
-    function initLanguageDisplay() {
-        const currentLang = localStorage.getItem('portal_language') || 'zh-CN';
-        console.log(`🔍 初始化语言显示，当前语言: ${currentLang}`);
-        updateCurrentLanguageDisplay(currentLang);
-    }
-    
-    function closeAllDropdowns() {
-        document.querySelectorAll('.navbar__item--dropdown').forEach(item => {
-            item.classList.remove('active');
-            item.classList.remove('hover');
+    closeAllDropdowns() {
+        document.querySelectorAll('.navbar__item--dropdown').forEach(dropdown => {
+            dropdown.classList.remove('active', 'hover');
         });
     }
-    
-    // 导出函数到全局作用域（用于调试）
-    window.navbarDebug = {
-        initLanguageDisplay,
-        switchLanguage,
-        triggerLanguageChange
-    };
-    
-})();
+}
+
+// 初始化导航栏
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => new Navbar());
+} else {
+    new Navbar();
+}
 </script>
